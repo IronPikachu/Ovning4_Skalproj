@@ -3,7 +3,7 @@ using System.Text;
 
 namespace SkalProj_Datastrukturer_Minne
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// The main method, vill handle the menues for the program
@@ -239,10 +239,9 @@ namespace SkalProj_Datastrukturer_Minne
              */
         }
 
-        static void ReverseText()
+        public static string ReverseText(string input)
         {
             Stack<char> stack = new Stack<char>();
-            string? input = Console.ReadLine();
             input ??= " ";
             for (int i = 0; i < input.Length; i++)
             {
@@ -254,7 +253,7 @@ namespace SkalProj_Datastrukturer_Minne
                 sb.Append(stack.Pop());
             }
             string output = sb.ToString();
-            Console.WriteLine(output);
+            return output;
         }
 
         static void CheckParanthesis()
@@ -321,6 +320,23 @@ namespace SkalProj_Datastrukturer_Minne
             2. Implementera funktionaliteten i metoden CheckParantheses . Låt programmet läsa in en sträng från användaren och returnera ett svar som reflekterar huruvida strängen är välformad eller ej.
                 ✔
              */
+        }
+
+        /*Övning 5*/
+        public static int RecursiveEven(int n)
+        {
+            if(n == 0)
+                return 0;
+            return (RecursiveEven(n - 1) + 2);
+        }
+
+        public static int Fibonacci(int n)
+        {
+            if (n <= 0)
+                return 0;
+            if (n == 1)
+                return n;
+            return (Fibonacci(n - 1) + Fibonacci(n - 2));
         }
     }
 }
