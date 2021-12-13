@@ -338,6 +338,38 @@ namespace SkalProj_Datastrukturer_Minne
                 return n;
             return (Fibonacci(n - 1) + Fibonacci(n - 2));
         }
+        /*Övning 6*/
+        public static int IterativeEven(int n)
+        {
+            int result = 0;
+            for (int i = 0; i < n; i++)
+            {
+                result += 2;
+            }
+            return result;
+        }
+
+        public static int IterativeFibonacci(int n)
+        {
+            if (n <= 0)
+                return 0;
+            List<int> fibo = new List<int>();
+            fibo.Add(0);
+            fibo.Add(1);
+            for (int i = fibo.Count; i <= n; i++)
+            {
+                fibo.Add(fibo[i - 1] + fibo[i - 2]);
+            }
+            return fibo.Last();
+        }
+        /*
+        Utgå ifrån era nyvunna kunskaper om iteration, rekursion och minneshantering. Vilken av ovanstående funktioner är mest minnesvänlig och varför?
+        Enligt Unit testerna så är rekursionerna snabbare än iterationerna i just dessa implementationer. 
+            Even ger 4ms på Recursion, 29ms på Iteration
+            Fibonacci ger 2ms på Recursion, 18ms på Iteration
+        Minns jag rätt är det för att Recursion sker stackvis och det inte är lika mycket overhead, 
+        medans Iteration sker på heapen vilket är djupare och svår åtkommligare, samt att det finns mer overhead
+         */
     }
 }
 
