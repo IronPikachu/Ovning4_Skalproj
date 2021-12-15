@@ -364,11 +364,11 @@ namespace SkalProj_Datastrukturer_Minne
         }
         /*
         Utgå ifrån era nyvunna kunskaper om iteration, rekursion och minneshantering. Vilken av ovanstående funktioner är mest minnesvänlig och varför?
-        Enligt Unit testerna så är rekursionerna snabbare än iterationerna i just dessa implementationer. 
+            Enligt Unit testerna så är rekursionerna snabbare än iterationerna i just dessa implementationer. 
             Even ger 4ms på Recursion, 29ms på Iteration
             Fibonacci ger 2ms på Recursion, 18ms på Iteration
-        Minns jag rätt är det för att Recursion sker stackvis och det inte är lika mycket overhead, 
-        medans Iteration sker på heapen vilket är djupare och svår åtkommligare, samt att det finns mer overhead
+            Minns jag rätt är det för att Recursion sker stackvis och det inte är lika mycket overhead, 
+            medans Iteration sker på heapen vilket är djupare och svår åtkommligare, samt att det finns mer overhead
          */
     }
 }
