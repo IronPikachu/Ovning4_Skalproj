@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace SkalProj_Datastrukturer_Minne
 {
@@ -269,7 +268,7 @@ namespace SkalProj_Datastrukturer_Minne
             Stack<char> chars = new Stack<char>();
             bool correctness = true;
 
-            for (int i = 0; i < input.Length; i++)
+            for (int i = 0; i < input.Length && correctness; i++)
             {
                 switch (input[i])
                 {
@@ -285,6 +284,11 @@ namespace SkalProj_Datastrukturer_Minne
                     case ')':
                     case '}':
                     case ']':
+                        if(chars.Count <= 0)
+                        {
+                            correctness = false;
+                            break;
+                        }
                         char output = chars.Pop();
                         switch (output)
                         {
